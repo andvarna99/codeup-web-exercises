@@ -18,4 +18,5 @@ hercules = parseInt(hercules)
 let totalDays = mermaid + bear + hercules
 let totalPrice = totalDays * 3
 
-alert (`You will pay ${totalPrice} to rent The Little Mermaid, Brother Bear, and Hercules!`)
+alert (`You will pay $${totalPrice} to rent The Little Mermaid, Brother Bear, and Hercules!`)
+
