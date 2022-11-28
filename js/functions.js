@@ -32,7 +32,8 @@ console.log(helloMessage);
  */
 
 let myName = "Andrea";
-console.log(sayHello(myName));
+helloMessage = sayHello(myName);
+console.log(helloMessage);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -91,8 +92,6 @@ console.log(calculateTip(.15,20));
  */
 let billTotal = parseInt(prompt (`What is the total of the bill?`));
 let percentToTip = parseFloat(prompt(`How much would you like to tip?`));
-console.log(billTotal);
-console.log(percentToTip);
 let result = calculateTip(percentToTip, billTotal);
 alert (`You should tip $${result} !`);
 console.log(result);
