@@ -35,7 +35,7 @@
      */
 
     for (let i = 0; i < names.length; i++) {
-        console.log(`The name at index ${i} is: ${names[i]}`)
+        console.log(`The name at index ${i} is: ${names[i]}`) //or names[i]
     }
 
     /**
@@ -70,7 +70,7 @@
     }
     console.log(arrayNumbersTwo());
     function arrayNumbersLast(num) {
-        return numbers.length;
+        return numbers.length-1;
     }
     console.log(arrayNumbersLast());
 

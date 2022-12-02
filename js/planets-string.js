@@ -25,5 +25,12 @@
      * string, and <li> tags around each planet.
      */
 
+    let planetsArrayFromString = planetsString.split("|");
+    console.log(planetsArrayFromString);
+    let planetsBreak = planetsArrayFromString.join("<br>");
+    console.log(planetsBreak);
+    //useful for poems and line breaks?
 
+    // let planetsUnorderedString = <ul><li>"Mercury"</li><li>"Venus"</li><li>"Earth"</li><li>"Mars"</li><li>"Jupiter"</li><li>"Saturn"</li><li>"Uranus"</li><li>"Neptune"</li></ul>;
+    // console.log(planetsUnorderedString);
 })();
