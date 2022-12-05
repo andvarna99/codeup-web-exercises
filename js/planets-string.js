@@ -11,7 +11,7 @@
      * console.log planetsArray to check your work
      */
 
-    let planetsArray = planetsString.split(',');
+    let planetsArray = planetsString.split('|');
     console.log(planetsArray);
 
     /**
@@ -20,8 +20,8 @@
      * results. Why might this be useful?
      *
      * BONUS:
-     * Create another string that would display your planets in an undordered
-     * list. You will need an opening AND closing <ul> tags around the entire
+     * Create another string that would display your planets in an unordered
+     * list.(bullet points) You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
 
@@ -29,8 +29,11 @@
     console.log(planetsArrayFromString);
     let planetsBreak = planetsArrayFromString.join("<br>");
     console.log(planetsBreak);
+    document.write(planetsBreak);
     //useful for poems and line breaks?
 
-    // let planetsUnorderedString = <ul><li>"Mercury"</li><li>"Venus"</li><li>"Earth"</li><li>"Mars"</li><li>"Jupiter"</li><li>"Saturn"</li><li>"Uranus"</li><li>"Neptune"</li></ul>;
-    // console.log(planetsUnorderedString);
+    planetsString = planetsArray.join("</li><li>");
+    planetsString ="<ul><li>" + planetsString + "</li></ul>"
+    console.log(planetsString);
+    document.write(planetsString);
 })();
