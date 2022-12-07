@@ -28,7 +28,7 @@
      */
 
     person.sayHello = function(){
-        return(`Hello from ${person.firstName} ${person.lastName}!`);
+        return(`Hello from ${person.firstName} ${person.lastName}!`); //use this. instead of person.
     }
     console.log(person.sayHello());
 
@@ -52,7 +52,7 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function(shopper) {
+    shoppers.forEach(function(shopper) { //can plug in another paramater index
         if (shopper.amount > 200) {
             console.log(`${shopper.name} bought $${shopper.amount} , and got a 12% discount. The final amount is $${shopper.amount - (shopper.amount * .12)}.`);
         } else{
@@ -137,7 +137,7 @@
 
 
     let showBookInfo = function (book,bookNumber){
-        console.log(`Book #${bookNumber} is ${book.title} by ${book.authorFirstName} ${book.authorLastName}.`);
+        console.log(`Book #${bookNumber} is ${book.title} by ${book.authorFirstName} ${book.authorLastName}.`); // use this instead of book
     }
     for (let i = 0; i < books.length; i++){
         // console.log(books[i]);
