@@ -1,4 +1,41 @@
 .fancy-header{
-    color:purple;
+    color:darkblue;
     text-decoration:underline;
+}
+h1{
+    text-align: center;
+}
+h2{
+    color: darkblue;
+    text-decoration:underline;
+}
+h1{
+    background-color: #A7C7E7;
+}
+body{
+    background-image: url(../img/steelbluebackground.jpeg);
+    font-family:cursive;
+    background-size: cover;
+}
+ul{
+    list-style: square;
+}
+ol{
+    list-style: upper-alpha;
+}
+table,td,tr{
+    font-size: 20px;
+    padding:20px;
+}
+a:link{
+    color:darkblue;
+}
+a:visited{
+    color:black;
+}
+a:hover{
+    color:white;
+}
+a:active{
+    color:teal;
 }
