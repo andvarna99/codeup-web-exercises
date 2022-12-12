@@ -9,15 +9,18 @@
     <main>
         <form method="POST" action="https://request-inspector.glitch.me/">
         <section>
-            <p>Email:</p>
-                <input type="text" name="email" placeholder="Enter your email address"><br>
-            <p>Password:</p>
-                <input type="password" name="password" placeholder="Enter your password"><br>
+            <label for="email">Email:</label>
+                <input id="email" type="text" name="email" placeholder="Enter your email address">
+            <br>
+            <label for="password">Password:</label>
+                <input id="password" type="password" name="password" placeholder="Enter your password">
+            <br>
         </section>
         <section>
             <br>
-            <p>Tell us about yourself!</p>
-                <textarea nname="bio" placeholder="Write a little bit about yourself here"></textarea><br>
+            <label for="bio">Tell us about yourself!</label>
+                <textarea id="bio" name="bio" placeholder="Write a little bit about yourself here"></textarea>
+            <br>
         </section>
         <section>
             <hr>
@@ -37,11 +40,13 @@
         </section>
         <section>
             <p>Which browser are you using?</p>
+            <label>
                 <select name="user_browser">
                     <option value="Chrome">Chrome</option>
                     <option value="Safari">Safari</option>
                     <option value="Firefox">FireFox</option>
                 </select>
+            </label>
         </section>
             <br>
             <br>
