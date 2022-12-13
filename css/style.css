@@ -1,41 +1,49 @@
 .fancy-header{
-    color:darkblue;
+    color:#bf3073;
     text-decoration:underline;
-}
-h1{
+
     text-align: center;
 }
 h2{
-    color: darkblue;
+    color:#86c5f7;
     text-decoration:underline;
 }
-h1{
-    background-color: #A7C7E7;
-}
+
 body{
-    background-image: url(../img/steelbluebackground.jpeg);
+    background-image: url(../img/geographicbackground.jpeg);
     font-family:cursive;
     background-size: cover;
 }
 ul{
     list-style: square;
+    color: white;
 }
 ol{
     list-style: upper-alpha;
+    color: white;
+}
+image{
+    background-color: white;
 }
 table,td,tr{
     font-size: 20px;
     padding:20px;
+    color: white;
+
+}
+p{
+    color:white;
+    text-align: center;
 }
 a:link{
-    color:darkblue;
+    color: #86c5f7;
 }
 a:visited{
-    color:black;
+    color:#bf3073;
 }
 a:hover{
     color:white;
 }
 a:active{
-    color:teal;
+    color:white;
 }
