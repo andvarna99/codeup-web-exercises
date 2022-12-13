@@ -1,8 +1,10 @@
 .fancy-header{
     color:#bf3073;
     text-decoration:underline;
-
     text-align: center;
+    background-color: #efb6d1;
+    padding:10px;
+    border-radius: 15px 40px;
 }
 h2{
     color:#86c5f7;
@@ -11,7 +13,7 @@ h2{
 
 body{
     background-image: url(../img/geographicbackground.jpeg);
-    font-family:cursive;
+    font-family: "Apple SD Gothic Neo";
     background-size: cover;
 }
 ul{
@@ -22,13 +24,15 @@ ol{
     list-style: upper-alpha;
     color: white;
 }
-image{
-    background-color: white;
+
+#vision{
+    border-color: #efb6d1;
 }
 table,td,tr{
     font-size: 20px;
     padding:20px;
     color: white;
+    border-color: #bf3073;
 
 }
 p{
