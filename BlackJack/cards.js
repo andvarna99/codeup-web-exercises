@@ -13,30 +13,30 @@
 // console.log(fullDeck);
 
 //function to create a new card object for each card
-function card (value,name,suit){
-    this.value = value;
-    this.name = name;
-    this.suit = suit;
-}
 
-function deck(){
-    this.names=["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
-    this.suits=["Spades","Hearts","Clubs","Diamonds"];
-    let cards = [];
 
-    for (let i = 0; i < this.suits.length; i++) {
-        for (let j = 0; j < this.names.length; j++) {
-            cards.push(new card(j+1, this.names[j],this.suits[i]));
+
+let ranks =["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
+let suits =["Spades","Hearts","Clubs","Diamonds"];
+
+function getDeck(){
+    let deck = new Array();
+    for (let i = 0; i < suits.length; i++) {
+        for (let j = 0; j < ranks.length; j++) {
+            let card={Rank: ranks[j], Suit: suits[i]};
+            deck.push(card);
         }
     }
-    return cards;
+    return deck;
 }
 
-let playerDeck = new deck();
-console.log(playerDeck);
+console.log(getDeck());
 
-function shuffle(){
-    for (let i = 0; i < 1000; i++) {
-        Math.floor((Math.random()*deck.length));
-    }
-}
+// let playerDeck = new deck();
+// console.log(playerDeck);
+//
+// function shuffle(){
+//     for (let i = 0; i < 1000; i++) {
+//         Math.floor((Math.random()*deck.length));
+//     }
+// }
