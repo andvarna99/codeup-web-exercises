@@ -1,0 +1,45 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+}
+
+nav{
+    background: #bababb;
+}
+
+ul{
+    display:inline;
+    list-style:none;
+    padding:0;
+    margin:0;
+
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+    font-family: "Work Sans", sans-serif;
+    position: relative;
+    float:left;
+    justify-content: space-between;
+}
+
+.logo{
+    font-family:"Montserrat",sans-serif;
+    padding:.2em 0em;
+    width:3em; height: 3em;
+
+
+}
+
+nav a:hover{
+    background:white;
+}
+
+.container{
+    display:flex;
+}
