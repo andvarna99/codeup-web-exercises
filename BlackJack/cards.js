@@ -5,38 +5,30 @@
  * hearts, diamonds). The deck of cards should stay a global in this file but
  * other files should not directly access the deck.
  */
-//the card variables
-// let suits = ["Spades","Hearts","Clubs","Diamonds"];
-// let rank = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
-// let fullDeck=suits*rank;
-//
-// console.log(fullDeck);
-
-//function to create a new card object for each card
-
 
 
 let ranks =["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
 let suits =["Spades","Hearts","Clubs","Diamonds"];
 
 function getDeck(){
-    let deck = new Array();
+    let deck = [];
     for (let i = 0; i < suits.length; i++) {
         for (let j = 0; j < ranks.length; j++) {
             let card={Rank: ranks[j], Suit: suits[i]};
             deck.push(card);
         }
+
     }
     return deck;
 }
 
 console.log(getDeck());
 
-// let playerDeck = new deck();
-// console.log(playerDeck);
-//
-// function shuffle(){
-//     for (let i = 0; i < 1000; i++) {
-//         Math.floor((Math.random()*deck.length));
-//     }
-// }
+//hand is an array
+//pop takes card from the top, shift takes card from the bottom
+let myHand=[];
+let drawnCard=getDeck.pop();
+myHand.push(drawnCard);
+
+console.log(getDeck);
+console.log(myHand);
