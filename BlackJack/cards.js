@@ -7,28 +7,48 @@
  */
 
 
-let ranks =["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"];
+let ranks =[2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"];
 let suits =["Spades","Hearts","Clubs","Diamonds"];
+let deck = [];
 
 function getDeck(){
-    let deck = [];
     for (let i = 0; i < suits.length; i++) {
         for (let j = 0; j < ranks.length; j++) {
-            let card={Rank: ranks[j], Suit: suits[i]};
+            let card={
+                Rank: ranks[j],
+                Suit: suits[i],
+            };
             deck.push(card);
         }
-
     }
     return deck;
 }
+getDeck();
 
-console.log(getDeck());
+//borrowed code from programiz.com to shuffle
+for(let i = deck.length -1; i > 0; i--){
+    let j = Math.floor(Math.random()*i);
+    let temp = deck[i];
+    deck[i] = deck[j];
+    deck[j] = temp;
+}
+
+
+
+console.log('Your cards are:');
+console.log(deck.pop());
+console.log(deck.pop());
+
+console.log(`Computer's cards are:`);
+console.log(deck.pop());
+console.log(deck.pop());
+
 
 //hand is an array
 //pop takes card from the top, shift takes card from the bottom
-let myHand=[];
-let drawnCard=getDeck.pop();
-myHand.push(drawnCard);
-
-console.log(getDeck);
-console.log(myHand);
+// let myHand=[];
+// let drawnCard= deck.pop();
+// myHand.push(drawnCard);
+//
+// console.log(getDeck);
+// console.log(myHand);

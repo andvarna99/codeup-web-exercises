@@ -88,6 +88,7 @@ a {
     float:right;
     position: relative;
     padding-top:15px;
+    line-height: 80px;
 }
 
 /* modifies the nav links to be in a line*/

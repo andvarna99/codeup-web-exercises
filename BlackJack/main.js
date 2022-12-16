@@ -5,7 +5,12 @@
  * it contains the current player and computer score globals
  * */
 
-function startGame(){
-    console.log(prompt ("Press ok to start the game!"));
+console.log(`Let's play BlackJack!`);
+
+function mainMenu(){
+    console.log(prompt (`Press OK to start the game!`));
 }
-console.log(startGame());
+console.log(mainMenu());
+
+
+
