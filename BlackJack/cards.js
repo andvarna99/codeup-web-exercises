@@ -33,15 +33,46 @@ for(let i = deck.length -1; i > 0; i--){
     deck[j] = temp;
 }
 
+var humanHand = [];
+var computerHand = [];
+
+function dealDeck() {
+    humanHand.push(deck.pop()); humanHand.push(deck.pop());
+    console.log(humanHand);
+    computerHand.push(deck.pop()); computerHand.push(deck.pop());
+    console.log(computerHand);
+}
+dealDeck();
+
+function handTotal(arr){
+    var total = 0
+    for(var i = 0; i < arr.length; i++){
+        console.log(arr[i].Rank);
+        if (arr[i].Rank === "Jack" ||arr[i].Rank === "Queen" ||arr[i].Rank === "King"){
+            arr[i].Rank
+            total += 10
+        } else if (arr[i].Rank === "Ace" ){
+            arr[i].Rank
+            total += 11
+        }else{
+            total += arr[i].Rank
+        }
+    }
+    console.log(total);
+}
+
+handTotal(humanHand);
 
 
-console.log('Your cards are:');
-console.log(deck.pop());
-console.log(deck.pop());
-
-console.log(`Computer's cards are:`);
-console.log(deck.pop());
-console.log(deck.pop());
+// console.log('Your cards are:');
+// console.log(deck.pop());
+// console.log(deck.pop());
+//
+//
+//
+// console.log(`Computer's cards are:`);
+// console.log(deck.pop());
+// console.log(deck.pop());
 
 
 //hand is an array

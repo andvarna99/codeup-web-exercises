@@ -6,11 +6,8 @@
  * */
 
 console.log(`Let's play BlackJack!`);
+console.log(prompt (`Press OK to start the game!`));
 
-function mainMenu(){
-    console.log(prompt (`Press OK to start the game!`));
-}
-console.log(mainMenu());
 
 
 
