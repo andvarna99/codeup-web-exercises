@@ -3,3 +3,9 @@
     height:346px;
     background-size: cover;
 }
+.btn-primary{
+    width:20%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

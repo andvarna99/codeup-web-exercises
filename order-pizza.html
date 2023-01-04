@@ -69,8 +69,9 @@
 <!--tab 1-->
         <div class="tab-pane fade show active" id="sizeAndCrust" role="tabpanel">
 
-          <div class="card-header" style="width:100%;">
-            <h5 class=" bg-primary text-white">Choose Size and Crust</h5>
+          <div class="card-header" >
+
+            <h5 class=" card-header bg-primary text-white">Choose Size and Crust</h5>
             <div class="card" >
               <div class="card-header">
                 Hand Tossed
@@ -91,73 +92,49 @@
                 </li>
               </ul>
             </div>
+
           </div>
 
-          <div class="card-header">
-            <div class="card" >
-              <div class="card-header">
-                Crispy Thin
+            <div class="card-header">
+
+              <div class="card" >
+                <div class="card-header">
+                  Crispy Thin
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                  <li class="list-group-item">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" >
+                    <label class="form-check-label">
+                      Medium (12")
+                    </label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" >
+                    <label class="form-check-label">
+                      Large (14")
+                    </label>
+                  </li>
+                </ul>
+
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                <li class="list-group-item">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" >
-                  <label class="form-check-label">
-                    Medium (12")
-                  </label>
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" >
-                  <label class="form-check-label">
-                    Large (14")
-                  </label>
-                </li>
-              </ul>
-              <a href="#" class="btn btn-primary d-flex justify-content-end">Next</a>
             </div>
-          </div>
+
+          <button  type="button" class="btn btn-primary d-flex float-end">Next</button>
 
         </div>
 <!--tab 2-->
         <div class="tab-pane fade show active" id="cheeseAndSauce" role="tabpanel">
 
           <div class="card-header">
-            <h5 class=" bg-primary text-white">Choose Cheese and Sauce</h5>
+            <h5 class="card-header bg-primary text-white">Choose Cheese and Sauce</h5>
             <div class="card">
               <div class="card-header">
                 Cheese
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">How Much?</li>
-                <button class="btn btn-secondary dropdown-toggle bg-light text-dark d-flex justify-content-start" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Normal
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Light</a></li>
-                  <li><a class="dropdown-item" href="#"> Normal</a></li>
-                  <li><a class="dropdown-item" href="#"> Heavy</a></li>
-                </ul>
-              </ul>
-            </div>
-
-
-            <div class="card-header">
-              <div class="card">
-                <div class="card-header">
-                  Sauce
-                </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">What Type?</li>
-                  <button class="btn btn-secondary dropdown-toggle bg-light text-dark d-flex justify-content-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                    Tomato
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Alfredo</a></li>
-                    <li><a class="dropdown-item" href="#"> Tomato</a></li>
-                    <li><a class="dropdown-item" href="#"> Garlic and Oil</a></li>
-                  </ul>
                   <li class="list-group-item">How Much?</li>
-                  <button class="btn btn-secondary dropdown-toggle bg-light text-dark d-flex justify-content-start" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn btn-secondary dropdown-toggle bg-light text-dark d-flex justify-content-start" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Normal
                   </button>
                   <ul class="dropdown-menu">
@@ -165,12 +142,44 @@
                     <li><a class="dropdown-item" href="#"> Normal</a></li>
                     <li><a class="dropdown-item" href="#"> Heavy</a></li>
                   </ul>
-                </ul>
-                <a href="#" class="btn btn-primary d-flex justify-content-start">Previous</a>
-                <a href="#" class="btn btn-primary d-flex justify-content-end">Next</a>
-              </div>
+              </ul>
             </div>
           </div>
+            <div class="card-header">
+
+              <div class="card">
+                <div class="card-header">
+                  Sauce
+                </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">What Type?</li>
+                    <button class="btn btn-secondary dropdown-toggle bg-light text-dark d-flex justify-content-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tomato
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Alfredo</a></li>
+                      <li><a class="dropdown-item" href="#"> Tomato</a></li>
+                      <li><a class="dropdown-item" href="#"> Garlic and Oil</a></li>
+                    </ul>
+                    <li class="list-group-item">How Much?</li>
+                    <button class="btn btn-secondary dropdown-toggle bg-light text-dark d-flex justify-content-start" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                      Normal
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Light</a></li>
+                      <li><a class="dropdown-item" href="#"> Normal</a></li>
+                      <li><a class="dropdown-item" href="#"> Heavy</a></li>
+                    </ul>
+                  </ul>
+
+              </div>
+              <div>
+                <button  type="button" class="btn btn-primary d-flex float-end">Next ></button>
+                <button  type="button" class="btn btn-primary d-flex float-end">< Previous</button>
+              </div>
+            </div>
+
+
         </div>
 
 
@@ -178,7 +187,7 @@
             <div class="tab-pane fade show active" id="toppings" role="tabpanel">
 
                   <div class="card-header">
-                    <h5 class=" bg-primary text-white">Choose Toppings</h5>
+                    <h5 class=" card-header bg-primary text-white">Choose Toppings</h5>
                       <div class="card">
                         <div class="card-header">
                           Choose Meats
@@ -239,13 +248,13 @@
                       </label>
                     </li>
                     </ul>
-                    <a href="#" class="btn btn-primary d-flex justify-content-end">Checkout</a>
-                  </div>
-                </div>
-              </div>
+                    <button  type="button" class="btn btn-primary d-flex float-end">Checkout</button>
 
+                  </div>
+
+            </div>
+        </div>
       </main>
     </div>
-  </div>
 </body>
 </html>
