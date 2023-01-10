@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>DOM: Query and Modify</title>
+<style>
+  #btn2, #btn4{
+    background-color: blue;
+    color:white;
+  }
+</style>
 </head>
+
 <body>
 
 <h1 id="main-header">Hello World!</h1>
@@ -40,7 +47,7 @@
 
     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
     // mainHeader.innerHTML = "JavaScript is Cool";
-    const header1 = function (event){
+    const header1 = function (){
       mainHeader.innerHTML = "JavaScript is Cool";
     }
     document.getElementById("btn1").addEventListener("click",header1);
@@ -52,7 +59,7 @@
     // TODO: Set the text color of subHeader to blue
     // subHeader.style.color = "blue";
 
-    const header2 = function (event){
+    const header2 = function (){
       subHeader.style.color = "blue";
     }
     document.getElementById("btn2").addEventListener("click",header2);
@@ -62,7 +69,7 @@
     console.log(listItems);
 
     // TODO: Set text color on every other list item to grey
-    const itemList1 = function (event) {
+    const itemList1 = function () {
       for (let i = 0; i < listItems.length; i++) {
         if (i % 2 === 0) {
           listItems[i].style.color = "grey";
@@ -73,7 +80,7 @@
     document.getElementById("btn3").addEventListener("click",itemList1);
 
       // TODO: Set text color of li with dbid = 1 to blue
-    const itemList2 = function (event) {
+    const itemList2 = function () {
       for (let i = 0; i < listItems.length; i++) {
         if (listItems[i].getAttribute("data-dbid") === "1") {
           listItems[i].style.color = "blue";
