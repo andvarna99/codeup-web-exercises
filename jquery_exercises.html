@@ -7,7 +7,9 @@
 <body>
     <div>
         <h1 id="mainHeader" class="codeUp">Main Header</h1>
+        <h1 class="codeUp">Main Header 2</h1>
         <p id="mainContent" class="codeUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos est fugit, in magnam maxime porro quisquam ratione repellendus voluptatum!</p>
+        <p class="codeUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos est fugit, in magnam maxime porro quisquam ratione repellendus voluptatum!</p>
         <ul id="mainList" class="codeUp">
             <li id="listItem1" class="item">list item</li>
             <li id="listItem2" class="item">list item</li>
@@ -17,26 +19,45 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script>
   "use strict";
-  $(document).ready(function(){
-    alert("dom loaded according to jquery");
-    alert($("li").html());
+  //first two jquery exercises
+
+  // $(document).ready(function(){
+  //   alert("dom loaded according to jquery");
+  //   alert($("li").html());
+  // });
+  //
+  // let mainHeader = $("#mainHeader").html();
+  // alert(mainHeader);
+  //
+  // let mainContent = $("#mainContent").html();
+  // alert(mainContent);
+  //
+  // $(".codeUp").css("border", "1px solid red");
+  //
+  // $("li").css("font-size","20px");
+  //
+  // $("h1").css("background-color", "yellow");
+  // $("p").css("background-color", "yellow");
+  // $("li").css("background-color", "yellow");
+  //
+  // $("h1, p, li").css("background-color", "yellow");
+
+  //jquery mouse events exercise
+  $("h1").click(function(){
+      $("h1").css("background-color","white");
+      $(this).css("background-color","lightgrey");
   });
 
-  let mainHeader = $("#mainHeader").html();
-  alert(mainHeader);
+  $("p").dblclick(function(){
+      $("p").css("font-size","16px");
+     $(this).css("font-size","18px");
+  });
 
-  let mainContent = $("#mainContent").html();
-  alert(mainContent);
-
-  $(".codeUp").css("border", "1px solid red");
-
-  $("li").css("font-size","20px");
-
-  $("h1").css("background-color", "yellow");
-  $("p").css("background-color", "yellow");
-  $("li").css("background-color", "yellow");
-
-  $("h1, p, li").css("background-color", "yellow");
+  $("li").hover(function(){
+      $(this).css("color","red");
+  },function(){
+      $(this).css("color","black");
+  });
 
 </script>
 </body>
