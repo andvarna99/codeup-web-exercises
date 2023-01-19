@@ -139,6 +139,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script>
   "use strict";
+
   //attribute and css exercise
   $(document).ready(function(){
     $("#toggle-btn").click(function(){
@@ -148,14 +149,17 @@
         $(this).toggleClass("bg-color");
     });
   });
+
   //traversal exercise
   $(document).ready(function(){
+
       //changes background color of last li in each ul
       $("#bg-btn").click(function(){
           $("#yellowstone-ul").children().last().toggleClass("bg-color");
           $("#yosemite-ul").children().last().toggleClass("bg-color");
           $("#mount-rainier-ul").children().last().toggleClass("bg-color");
       });
+
       //changes li text to bold when h3s are clicked
       $("#yellowstone-h3").click(function(){
           $("#yellowstone-ul").children().toggleClass("bold");
@@ -166,6 +170,7 @@
       $("#mount-rainier-h3").click(function(){
           $("#mount-rainier-ul").children().toggleClass("bold");
       });
+
       //changes first li of parent ul to font color pink when any li is clicked
       $(".yellowstone-li").click(function(){
           $("#yellowstone-ul").children().next().first().toggleClass("font-color");
@@ -176,10 +181,12 @@
       $(".mount-rainier-li").click(function(){
           $("#mount-rainier-ul").children().next().first().toggleClass("font-color");
       });
+
       //image variables
       let img1 = $("#yellowstone-img").attr("src");
       let img2 = $("#yosemite-img").attr("src");
       let img3 = $("#mount-rainier-img").attr("src");
+
       //swaps first and second images
       $("#swap-right-btn").click(function(){
           $(this).prev().attr("src", img2);
@@ -187,6 +194,7 @@
           img1 = $("#yellowstone-img").attr("src");
           img2 = $("#yosemite-img").attr("src");
       });
+
       //swaps random between left and right images
       $("#swap-random-btn").click(function(){
           let randomNum = Math.floor(Math.random()*2);
@@ -203,6 +211,7 @@
           img3 = $("#mount-rainier-img").attr("src");
           }
       });
+
       //swaps 3rd and 2nd images
       $("#swap-left-btn").click(function(){
           $(this).prev().attr("src", img2);
@@ -210,7 +219,69 @@
           img2 = $("#yosemite-img").attr("src");
           img3 = $("#mount-rainier-img").attr("src");
       });
+
   });
+  //-----------------------------------------------------------------------------------//
+  //----------------------------alternative ways demo----------------------------------//
+  //-----------------------------------------------------------------------------------//
+
+  //alternative way for background color of last lis
+  $("#button").click(function(){
+      $("ul li:last-child").css("background-color","#fce3e7");
+  });
+
+  //alternative way for li to bold when h3s are clicked
+  $("header").click(function(){
+      $(this).next().children().css("font-weight","bold");
+  });
+
+  //alternative way to change first li font color when lis are clicked
+  $("lis").click(function(){
+      $(this).parent().children().first().css("color","#cb7782");
+  });
+
+  //clean version of alternative way to do first swap
+  $("#button1").click(function(){
+     let imgDiv1 = $(this).prev();
+     let imgDiv2 = $(this).parent().next().children().first();
+     swapImages(imgDiv1, imgDiv2);
+  });
+
+  //clean version of alternative way for random swap
+  $("#button2").click(function(){
+      let imgDiv1;
+      let imgDiv2;
+      if(Math.random() < 0.5) {
+          imgDiv1 = $(this).prev();
+          imgDiv2 = $(this).parent().prev().children().first();
+      } else {
+          imgDiv1 = $(this).prev();
+          imgDiv2 = $(this).parent().next().children().first();
+      }
+      swapImages(imgDiv1, imgDiv2);
+  });
+
+  //clean version of alternative way for last swap
+  $("#button3").click(function(){
+      let imgDiv1 = $(this).prev();
+      let imgDiv2 = $(this).parent().prev().children().first();
+      swapImages(imgDiv1, imgDiv2);
+  });
+
+  //swap images function used for alternative ways
+  function swapImages(imgDiv1, imgDiv2){
+      let img1 = imgDiv1.css("background-image");
+      let img2 = imgDiv2.css("background-image");
+
+      let img3 = img1;
+      img1 = img2;
+      img2 = img3;
+
+      imgDiv1.css("background-image", img1);
+      imgDiv2.css("background-image", img2)
+  }
+  //-------------------------------------------------------------------------------//
+  //-------------------------------------------------------------------------------//
 </script>
 </body>
 </html>
