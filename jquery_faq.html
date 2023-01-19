@@ -5,21 +5,16 @@
     <title>jquery_faq</title>
   <style>
       #toggle-btn{
-          background-color: pink;
-          border-radius: 50px;
-          border: 2px solid black;
-          box-shadow: 2px 2px 4px black;
-          font-family: "Courier New",serif;
           text-align: center;
           margin:auto;
           display: flex;
           justify-content: center;
       }
-      #toggle-btn:hover{
-          background-color: #cb7782;
-      }
       h1{
           text-align: center;
+          font-family: "American Typewriter", serif;
+      }
+      h3{
           font-family: "American Typewriter", serif;
       }
       dt{
@@ -37,6 +32,41 @@
       }
       .invisible{
       visibility: hidden;
+      }
+      .yellowstone-li, .yosemite-li, .mount-rainier-li{
+          font-family: "Courier New",serif;
+
+      }
+      .bold{
+          font-weight: bold;
+      }
+      .font-color{
+          color:#cb7782;
+      }
+      img{
+          height:225px;
+          width:225px;
+          border: 10px solid #cb7782;
+          padding:5px;
+          margin:10px;
+          text-align: center;
+      }
+      .images, .img-btns{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+      }
+      button{
+          background-color: pink;
+          border-radius: 50px;
+          border: 2px solid black;
+          box-shadow: 2px 2px 4px black;
+          font-family: "Courier New",serif;
+          text-align: center;
+          margin:auto;
+      }
+      button:hover{
+          background-color: #cb7782;
       }
 
   </style>
@@ -68,20 +98,118 @@
      <dt>10. End on a High Note:</dt>
      <dd>The highest point in North America is Mt. McKinley in Denali National Park, which stands at 20,320 feet tall.</dd>
   </dl>
-<footer>
+    <button id="bg-btn">Add background</button>
+    <ul id="yellowstone-ul" >
+        <h3 id="yellowstone-h3" class="park-name">Yellowstone National Park</h3>
+        <li class="yellowstone-li">Yellowstone encompasses 3,472 square miles (2,221,766 acres) which makes it larger than Rhode Island and Delaware combined.</li>
+        <li class="yellowstone-li">There are more than 10,000 hydrothermal features in Yellowstone. The four types of thermal features are geysers, hot springs, mud pots, and fumaroles.</li>
+        <li class="yellowstone-li">There are approximately 1,000 miles of hiking trails in Yellowstone.</li>
+        <li class="yellowstone-li">About 290 waterfalls can be found throughout Yellowstone’s 2.2 million acres.</li>
+    </ul>
+    <ul id="yosemite-ul">
+        <h3 id="yosemite-h3" class="park-name">Yosemite National Park</h3>
+        <li class="yosemite-li">The Park Is Home to the Rare Sierra Nevada Red Fox</li>
+        <li class="yosemite-li">Yosemite Is Famous for Its Giant Sequoia Trees</li>
+        <li class="yosemite-li">Yosemite National Park experiences a Mediterranean climate, meaning that it is mild, warm, and temperate.</li>
+        <li class="yosemite-li">Yosemite National Park is famous for the magnificent rainbows that appear in the park’s waterfalls.</li>
+    </ul>
+    <ul id="mount-rainier-ul">
+        <h3 id="mount-rainier-h3" class="park-name">Mount Rainier National Park</h3>
+        <li class="mount-rainier-li">Mount Rainier is the most glaciated peak in the contiguous U.S.</li>
+        <li class="mount-rainier-li">Mount Rainier is a strato volcano with the potential to erupt again</li>
+        <li class="mount-rainier-li">The park is home to over 280 species of wildlife</li>
+        <li class="mount-rainier-li">Beautiful wildflowers transform meadows into an ocean of color in peak season at Mount Rainier.</li>
+    </ul>
+<div class="images">
+    <div id="imgBtn1">
+        <img id="yellowstone-img" src="img/yellowstone1.jpeg" alt="yellowstone image">
+        <button id="swap-right-btn" class="img-btns">Swap Right</button>
+    </div>
+    <div id="imgBtn2">
+        <img id="yosemite-img" src="img/yosemite1.jpeg" alt="yosemite image">
+        <button id="swap-random-btn" class="img-btns">Swap Random</button>
+    </div>
+    <div id="imgBtn3">
+        <img id="mount-rainier-img" src="img/mount-rainier1.jpeg" alt="mount rainier image">
+        <button id="swap-left-btn" class="img-btns">Swap Left</button>
+    </div>
+</div>
 
-</footer>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script>
   "use strict";
-$(document).ready(function(){
+  //attribute and css exercise
+  $(document).ready(function(){
     $("#toggle-btn").click(function(){
        $("dd").toggleClass("invisible");
     });
     $("dt").click(function(){
         $(this).toggleClass("bg-color");
     });
-});
+  });
+  //traversal exercise
+  $(document).ready(function(){
+      //changes background color of last li in each ul
+      $("#bg-btn").click(function(){
+          $("#yellowstone-ul").children().last().toggleClass("bg-color");
+          $("#yosemite-ul").children().last().toggleClass("bg-color");
+          $("#mount-rainier-ul").children().last().toggleClass("bg-color");
+      });
+      //changes li text to bold when h3s are clicked
+      $("#yellowstone-h3").click(function(){
+          $("#yellowstone-ul").children().toggleClass("bold");
+      });
+      $("#yosemite-h3").click(function(){
+          $("#yosemite-ul").children().toggleClass("bold");
+      });
+      $("#mount-rainier-h3").click(function(){
+          $("#mount-rainier-ul").children().toggleClass("bold");
+      });
+      //changes first li of parent ul to font color pink when any li is clicked
+      $(".yellowstone-li").click(function(){
+          $("#yellowstone-ul").children().next().first().toggleClass("font-color");
+      });
+      $(".yosemite-li").click(function(){
+          $("#yosemite-ul").children().next().first().toggleClass("font-color");
+      });
+      $(".mount-rainier-li").click(function(){
+          $("#mount-rainier-ul").children().next().first().toggleClass("font-color");
+      });
+      //image variables
+      let img1 = $("#yellowstone-img").attr("src");
+      let img2 = $("#yosemite-img").attr("src");
+      let img3 = $("#mount-rainier-img").attr("src");
+      //swaps first and second images
+      $("#swap-right-btn").click(function(){
+          $(this).prev().attr("src", img2);
+          $("#imgBtn2").children().first().attr("src",img1);
+          img1 = $("#yellowstone-img").attr("src");
+          img2 = $("#yosemite-img").attr("src");
+      });
+      //swaps random between left and right images
+      $("#swap-random-btn").click(function(){
+          let randomNum = Math.floor(Math.random()*2);
+          if(randomNum % 2 === 0){
+              $(this).prev().attr("src", img1);
+              $("#imgBtn1").children().first().attr("src",img2);
+              img1 = $("#yellowstone-img").attr("src");
+              img2 = $("#yosemite-img").attr("src");
+          }
+          if(randomNum % 2 !== 0){
+              $(this).prev().attr("src", img3);
+              $("#imgBtn3").children().first().attr("src",img2);
+          img2 = $("#yosemite-img").attr("src");
+          img3 = $("#mount-rainier-img").attr("src");
+          }
+      });
+      //swaps 3rd and 2nd images
+      $("#swap-left-btn").click(function(){
+          $(this).prev().attr("src", img2);
+          $("#imgBtn2").children().first().attr("src",img3);
+          img2 = $("#yosemite-img").attr("src");
+          img3 = $("#mount-rainier-img").attr("src");
+      });
+  });
 </script>
 </body>
 </html>
