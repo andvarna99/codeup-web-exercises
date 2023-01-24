@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--custom css-->
+    <style>
+        body{
+            background-color: #f5d7e4;
+        }
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+
+        h1{
+            font-family: "American Typewriter", serif;
+            text-align: center;
+        }
+        label, input {
+            font-family: "American Typewriter", serif;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="m-2">---My First Mapbox Map---</h1>
+
+<!--select input to change zoom size-->
+<div class="container mb-3 d-flex flex-row justify-content-center">
+    <form>
+        <label for="zoomForm">Choose a zoom size:</label>
+        <select id="zoomForm">
+            <option id="zoom5" value="5">5</option>
+            <option id="zoom10" value="10" selected>10</option>
+            <option id="zoom15" value="15">15</option>
+        </select>
+    </form>
+</div>
+
+<!--searchbar-->
+<div class="form-group mb-3 d-flex justify-content-center">
+    <label for="address-input" class="form-label">Enter a place:</label>
+    <input id="address-input" class="form-label" type="text">
+</div>
+<div class="d-flex justify-content-center">
+<button id="search-btn" type="button" class="btn btn-light mb-3">Search and Move</button>
+</div>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!--popup images-->
+<img id="nolaPoboysImg" src="img/nola-poboys.jpeg" class="hidden" alt="NOLA Poboys sandwich pic">
+<img id="cafeDuMondeImg" src="img/cafe-du-monde.jpeg" class="hidden" alt="Café Du Monde beignets and coffee pic">
+<img id="brennansImg" src="img/brennans.jpeg" class="hidden" alt="Brennan's duck confit hash pic">
+
+<!--jquery js-->
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+<!--bootstrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<!--api keys-->
+<script src="js/keys.js"></script>
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<!-- custom js -->
+<script>
+    "use strict";
+
+        //map of new orleans
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+        let map = new mapboxgl.Map({
+            container: 'map',
+            style: "mapbox://styles/mapbox/navigation-night-v1",
+            zoom: 15,
+            center: [-90.0639, 29.9604]
+        });
+
+        //array images for popup
+        let nolaPoboysImg = $("#nolaPoboysImg").attr("src");
+        let cafeDuMondeImg = $("#cafeDuMondeImg").attr("src");
+        let brennansImg = $("#brennansImg").attr("src");
+
+        //restaurants array for popup
+        let restaurants = [
+            {
+                name: "Nola Poboys",
+                about: "A low-key sub spot with incredible poboys",
+                dish: "Who Dat Fried Shrimp",
+                image: nolaPoboysImg
+            },
+            {
+                name: "Café du Monde",
+                about: "Famous New Orleans cafe known for café au laits, chicory coffee & beignets since 1862",
+                dish: "Beignets",
+                image: cafeDuMondeImg
+            },
+            {
+                name: "Brennan's New Orleans",
+                about: "Traditional spot for upscale Creole fare",
+                dish: "Duck Confit Hash",
+                image: brennansImg
+            }
+        ]
+
+        //function for displaying restaurants array in popups connected to markers
+        function pinThatRestaurant(restaurant) {
+            geocode(restaurant.name, MAPBOX_API_KEY).then(function (result) {
+                let marker = new mapboxgl.Marker({"color": "#cb7782"});
+                marker.setLngLat(result);
+                marker.addTo(map);
+                let popup = new mapboxgl.Popup();
+                popup.setHTML(`<h3 style="font-family: 'American Typewriter', serif">${restaurant.name}</h3>
+                <p style="font-family: 'American Typewriter', serif">${restaurant.about}</p>
+                <img src=${restaurant.image}>`);
+                marker.setPopup(popup);
+            });
+        }
+
+        //loop to display each array object in popups
+        restaurants.forEach(pinThatRestaurant);
+
+        //functionality for zoom button
+        $("#zoomForm").change(function(){
+           map.setZoom($(this)[0].value);
+        });
+
+        //functionality for search bar
+        // let geocoder = new MapboxGeocoder({
+        //     accessToken: mapboxgl.accessToken,
+        //     mapboxgl:mapboxgl,
+        //     marker:false,
+        //     placeholder: "Search for places in New Orleans",
+        //     bbox:[-90.0639,29.9604,-90.0644,29.9584],
+        //     proximity:{
+        //         longitude:-90.0639,
+        //         latitude:29.9604
+        //     }
+        // });
+        // map.addControl(geocoder);
+
+        //functionality for search bar
+        $("#search-btn").click(function(){
+           let address = $("#address-input") .val();
+           geocode(address, MAPBOX_API_KEY).then(function(result){
+               let marker = new mapboxgl.Marker({"color": "#cb7782"});
+               marker.setLngLat(result);
+               marker.addTo(map);
+
+               map.flyTo({
+                   center:result,
+                   zoom: 10
+               });
+           });
+        });
+
+</script>
+
+</body>
+</html>

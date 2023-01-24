@@ -27,7 +27,7 @@
 </table>
 <div class="d-flex justify-content-center">
 <button id="refreshBtn" type="button" class="btn btn-dark">Refresh</button>
-</div>
+</div>{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -59,6 +59,32 @@
         });
       });
     });
+
+    //alternative way
+    // function fetchTools() {
+    //   $.ajax("data/inventory.json")
+    //           .done(function (data) {
+    //             let htmlString;
+    //             //build a table row html string from the tools in data
+    //             for (let i = 0; i < data.length; i++) {
+    //               const tool = data[i];
+    //               htmlString += `
+    //               <tr>
+    //                   <td>${tool.title}</td>
+    //                   <td>${tool.quantity}</td>
+    //                   <td>${tool.price}</td>
+    //                   <td>${tool.categories}</td>
+    //               </tr>`;
+    //             }
+    //             //replace the html in #insertProducts
+    //             $("#insertProducts").html(htmlString);
+    //           });
+    // }
+    // $("#refreshBtn").click(function(){
+    //   fetchTools();
+    // });
+
+
   })();
 </script>
 
