@@ -62,6 +62,9 @@ const userNames = users.reduce(function(names,user){
     return `${names}${user.name}, `;
 }, "");
 
-const userLanguages = users.reduce(function(languages,user){
-    return `${languages}${user.languages},`;
-},"");
+const userLanguages = users.reduce(function(mySet,user){
+    user.languages.forEach(function(language) {
+        mySet.add(language);
+    });
+    return mySet;
+},new Set());
