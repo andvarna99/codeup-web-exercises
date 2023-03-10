@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Exam Practice</title>
+</head>
+<body>
+<script>
+  "use strict";
+  (function(){
+
+    //1. write a function called commasToHyphens that replaces commas
+    // in a given string parameter with hyphens. the function
+    //should return the new string
+    //console.log(comasToHyphens("hello,world"));
+    //outputs "hello-world"
+    function commasToHyphens(str){
+      return str.replaceAll(",", "-");
+    }
+    console.log(commasToHyphens("hello,world"));
+
+    //2. write a function called sumOfAges that returns the sum
+    // of a given array of people objects' ages
+    const people = [
+      {
+        name:"bob",
+        age:10
+      },{
+        name:"sue",
+        age: 22
+      },{
+        name:"lou",
+        age:41
+      }
+    ]
+    //ex: console.log(sumOfAges(people));
+    // returns "73"
+    function sumOfAges(people){
+      let sum = 0;
+      for (let i = 0; i < people.length; i++) {
+        sum += people[i].age;
+      }
+      return sum;
+    }
+    console.log(sumOfAges(people));
+
+    //3.
+
+  })();
+</script>
+</body>
+</html>
